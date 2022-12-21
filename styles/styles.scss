@@ -1,0 +1,13 @@
+:root{
+    font-family: "EB Garamond", serif;
+    font-size: 1.1rm;
+    --colour-primary: hsl(229, 36%, 9%);
+    --colour-secondary: hsl(0, 73%, 26%);
+    --colour-third: hsl(25, 73%, 26%);
+    --colour-fourth: hsl(50, 73%, 26%);
+    --colour-fifth: hsl(100, 73%, 26%);
+}
+
+body{
+    background-color: var(--colour-primary);
+}
