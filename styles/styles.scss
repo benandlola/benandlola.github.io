@@ -1,77 +1,241 @@
-/*
+// variables used for website
 :root{
-    font-family: "EB Garamond", serif;
-    font-size: 1.1rm;
     --colour-primary: hsl(229, 36%, 9%);
-    --colour-secondary: hsl(0, 73%, 26%);
-    --colour-third: hsl(25, 73%, 26%);
-    --colour-fourth: hsl(50, 73%, 26%);
-    --colour-fifth: hsl(100, 73%, 26%);
+    --colour-secondary: lightcoral;
+    --colour-third: darkslategray;
+    --colour-fourth: hsl(0, 73%, 26%);
+    --colour-fifth: burlywood;  
+    --colour-white: ivory;
+    --transition-main: all .4s ease-in-out;
 }
 
-body{
-    background-color: var(--colour-primary);
-}
-*/
-
-/* define some variables for colors, font sizes, and other styles */
-$primary-color: #333;
-$secondary-color: #ccc;
-$font-size: 1em;
-
-/* create a mixin to apply a box shadow effect to elements */
-@mixin box-shadow {
-  box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.3);
-}
-
-/* style the body element */
+// style the body element
 body {
-  font-family: sans-serif;
-  color: $primary-color;
-  background-color: #fff;
+  font-family: "EB Garamond", serif;
+  font-size: 1.1rm;
+  color: var(--colour-secondary);
+  background-color: var(--colour-primary);
 }
 
-/* style the header element */
+// style the header element
 header {
-  background-color: $secondary-color;
+  background-color: var(--colour-fifth);
   padding: 1em;
 }
 
-/* style the main content area */
+// style the main content area 
 main {
   max-width: 800px;
   margin: 0 auto;
   padding: 1em;
 }
 
-/* style the footer element */
-footer {
-  background-color: $secondary-color;
-  padding: 1em;
-}
-
-/* style the navigation menu */
-nav ul {
-  list-style: none;
-  margin: 0;
-  padding: 0;
-  display: flex;
-}
-
-nav li {
-  margin: 0 1em;
-}
-
-nav a {
-  text-decoration: none;
-  color: #fff;
-  font-size: $font-size;
-  &:hover {
-    color: $primary-color;
+// style the navigation menu 
+nav {
+  ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    li {
+      margin: 0 1em;
+    }
+    a {
+      text-decoration: none;
+      color: #fff;
+      font-size: 1.1rem;
+      &:hover {
+        color: var(--colour-primary);
+      }
+    }
   }
 }
 
-/* apply the box shadow mixin to the contact section */
+// download resume button
+.btn{
+  display: flex;
+  align-self: flex-start;
+  .resume-btn{
+    border-radius: 30px;
+    color: inherit;
+    font-weight: 600;
+    position: relative;
+    border: 1px solid var(--colour-third);
+    display: flex;
+    align-self: flex-start;
+    align-items: center;
+    overflow: hidden;
+    .resume-text{
+      padding: 0 2rem;
+    }
+    .resume-icon{
+      background-color: var(--colour-fourth);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 50%;
+      padding: 0.95rem;
+    }
+    &::before{
+      content: '';
+      position: absolute;
+      top: 0;
+      right: 0;
+      transform: translateX(100%);
+      transition: var(--transition-main);
+      z-index: -1;
+    }
+    &:hover{
+      transition: var(--transition-main);
+      &::before{
+        width: 100%;
+        height: 100%;
+        background-color: var(--color-fifth);
+        transform: translateX(0);
+      }
+    }
+  }
+}
+
+.stat-title{
+  text-transform: uppercase;
+  font-size: 1.4rem;
+  text-align: center;
+  padding: 3.5rem 0;
+  position: relative;
+  &::before{
+      content: '';
+      position: absolute;
+      left: 50%;
+      top: 0%;
+      width: 40%;
+      height: 1px;
+      background-color: var(--colour-third);
+      transform: translateX(-50%);
+  }
+}
+
+// Education
+.experience{
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-gap: 2rem;
+  padding-bottom: 3rem;
+  .experience-item{
+    position: relative;
+    padding-left: 3rem;
+    border-left: 1px solid var(--colour-fifth);
+    margin-top: 0;
+    .exp-icon{
+      position: absolute;
+      left: -27px;
+      top: 0;
+      background-color: var(--colour-third);
+      width: 50px;
+      height: 50px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      i{
+        font-size: 1.3rem;
+      }
+    }
+    .exp-duration{
+      padding: .2rem .6rem;
+      background-color: var(--colour-fourth);
+      border-radius: 15px;
+      display: inline-block;
+      font-size: .8rem;
+      text-transform: uppercase;
+      font-weight: 500;
+    }
+    h5{
+      //padding: 1rem 0;
+      margin: 0;
+      text-transform: uppercase;
+      font-size: 1.3rem;
+      font-weight: 600;
+      color: var(--colour-white);
+      span{
+        color: var(--colour-fifth);
+        font-weight: 500;
+        font-size: 1.2rem;
+      }
+    }
+    p{
+      color: var(--colour-white);
+    }
+  }
+}
+
+// Skills section
+.about-stats{
+  padding-bottom: 4rem;
+  .progress-bars{
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-gap: 2rem;
+    .progress-bar{
+      display: flex;
+      flex-direction: column;
+      .prog-title{
+        color: var(--colour-white);
+        text-transform: uppercase;
+        font-weight: 500;
+        margin: 0;
+      }
+      .progress-container{
+        display: flex;
+        align-items: center;
+        .prog-text{
+          color: var(--colour-white);
+          margin: 0;
+        }
+        .progress{
+          width: 100%;
+          height: .45rem;
+          background-color: var(--colour-third);
+          margin-left: 1rem;
+          position: relative;
+          span{
+            position: absolute;
+            left: 0;
+            top: 0;
+            height: 100%;
+            background-color: var(--colour-fifth);
+            transition: var(--transition-main);
+          }
+          .html{width: 55%;}
+          .java{width: 80%;}
+          .python{width: 85%;}
+          .javascript{width: 20%;}
+          .c{width: 65%;}
+        }
+      }
+    }
+  }
+}
+
+.stat-title{
+  text-transform: uppercase;
+  font-size: 1.4rem;
+  text-align: center;
+  padding: 3.5rem 0;
+  position: relative;
+  &::before{
+      content: '';
+      position: absolute;
+      left: 50%;
+      top: 0%;
+      width: 40%;
+      height: 1px;
+      background-color: var(--colour-fourth);
+      transform: translateX(-50%);
+  }
+}
+
+//apply the box shadow mixin to the contact section
 #contact {
-  @include box-shadow;
+  box-shadow: 1px 1px 3px rgb(195, 207, 165);
 }
