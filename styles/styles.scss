@@ -1,3 +1,4 @@
+/*
 :root{
     font-family: "EB Garamond", serif;
     font-size: 1.1rm;
@@ -10,4 +11,67 @@
 
 body{
     background-color: var(--colour-primary);
+}
+*/
+
+/* define some variables for colors, font sizes, and other styles */
+$primary-color: #333;
+$secondary-color: #ccc;
+$font-size: 1em;
+
+/* create a mixin to apply a box shadow effect to elements */
+@mixin box-shadow {
+  box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.3);
+}
+
+/* style the body element */
+body {
+  font-family: sans-serif;
+  color: $primary-color;
+  background-color: #fff;
+}
+
+/* style the header element */
+header {
+  background-color: $secondary-color;
+  padding: 1em;
+}
+
+/* style the main content area */
+main {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 1em;
+}
+
+/* style the footer element */
+footer {
+  background-color: $secondary-color;
+  padding: 1em;
+}
+
+/* style the navigation menu */
+nav ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+}
+
+nav li {
+  margin: 0 1em;
+}
+
+nav a {
+  text-decoration: none;
+  color: #fff;
+  font-size: $font-size;
+  &:hover {
+    color: $primary-color;
+  }
+}
+
+/* apply the box shadow mixin to the contact section */
+#contact {
+  @include box-shadow;
 }
