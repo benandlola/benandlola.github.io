@@ -10,7 +10,7 @@
 }
 
 // style the body element
-body {
+body{
   font-family: "EB Garamond", serif;
   font-size: 1.1rm;
   color: var(--colour-secondary);
@@ -18,33 +18,41 @@ body {
 }
 
 // style the header element
-header {
+header{
+  position: relative;
   background-color: var(--colour-fifth);
-  padding: 1em;
+  padding: 0.4rem;
+  margin-bottom: 0;
+  h1{
+    padding-left: 1.6rem;
+  }
 }
 
 // style the main content area 
-main {
+main{
   max-width: 800px;
   margin: 0 auto;
   padding: 1em;
 }
 
 // style the navigation menu 
-nav {
-  ul {
+nav{
+  float: right;
+  margin-top: -3.2rem;
+  padding-right: 1.7rem;
+  ul{
     list-style: none;
     margin: 0;
     padding: 0;
     display: flex;
-    li {
+    li{
       margin: 0 1em;
     }
-    a {
+    a{
       text-decoration: none;
       color: #fff;
       font-size: 1.1rem;
-      &:hover {
+      &:hover{
         color: var(--colour-primary);
       }
     }
@@ -55,6 +63,8 @@ nav {
 .btn{
   display: flex;
   align-self: flex-start;
+  justify-content: center;
+  padding: 1.3rem;
   .resume-btn{
     border-radius: 30px;
     color: inherit;
@@ -90,32 +100,152 @@ nav {
       &::before{
         width: 100%;
         height: 100%;
-        background-color: var(--color-fifth);
+        background-color: var(--colour-white);
         transform: translateX(0);
       }
     }
   }
 }
 
-.stat-title{
+.title{
   text-transform: uppercase;
   font-size: 1.4rem;
   text-align: center;
   padding: 3.5rem 0;
   position: relative;
+  margin-bottom: 0;
   &::before{
       content: '';
       position: absolute;
       left: 50%;
       top: 0%;
-      width: 40%;
+      width: 100%;
       height: 1px;
       background-color: var(--colour-third);
       transform: translateX(-50%);
   }
 }
 
-// Education
+// Projects section
+.projects{
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-gap: 2rem;
+  margin-top: 3rem;
+  .project-item{
+    position: relative;
+    img{
+      width: 100%;
+      height: 300px;
+      object-fit: cover;
+      border-radius: 15px;
+    }
+    .hover-items{
+      width: 100%;
+      height: 100%;
+      background-color: var(--colour-secondary);
+      position: absolute;
+      left: 0;
+      top: 0;
+      border-radius: 15px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      opacity: 0;
+      transform: scale(0);
+      transition: var(--transition-main);
+      h3{
+        font-size: 1.5rem;
+        color: var(--colour-white);
+        margin-bottom: 1.5rem;
+      }
+      .icons{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        .icon{
+          background-color: var(--colour-primary);
+          border-radius: 50%;
+          width: 50px;
+          height: 50px;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          margin: 0 1rem;
+          cursor: pointer;
+          transition: var(--transition-main);
+          i{
+            font-size: 1.5rem;
+            color: var(--colour-fifth);
+            margin: 0 1rem;
+          }
+          &:hover{
+            background-color: var(--colour-white);
+            i{
+              color: var(--colour-secondary);
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+.project-item:hover .hover-items{
+  opacity: 1;
+  transform: scale(1);
+}
+
+// Skills section
+.about-stats{
+  padding-bottom: 4rem;
+  .progress-bars{
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-gap: 2rem;
+    .progress-bar{
+      display: flex;
+      flex-direction: column;
+      .prog-title{
+        color: var(--colour-white);
+        text-transform: uppercase;
+        font-weight: 500;
+        margin: 0;
+      }
+      .progress-container{
+        display: flex;
+        align-items: center;
+        .prog-text{
+          color: var(--colour-white);
+          margin: 0;
+        }
+        .progress{
+          width: 100%;
+          height: .45rem;
+          background-color: var(--colour-third);
+          margin-left: 1rem;
+          position: relative;
+          span{
+            position: absolute;
+            left: 0;
+            top: 0;
+            height: 100%;
+            background-color: var(--colour-fifth);
+            transition: var(--transition-main);
+          }
+          .html{width: 55%;}
+          .java{width: 80%;}
+          .python{width: 85%;}
+          .javascript{width: 20%;}
+          .c{width: 65%;}
+        }
+      }
+    }
+  }
+}
+
+// Experience
 .experience{
   display: grid;
   grid-template-columns: repeat(2, 1fr);
@@ -169,73 +299,5 @@ nav {
   }
 }
 
-// Skills section
-.about-stats{
-  padding-bottom: 4rem;
-  .progress-bars{
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    grid-gap: 2rem;
-    .progress-bar{
-      display: flex;
-      flex-direction: column;
-      .prog-title{
-        color: var(--colour-white);
-        text-transform: uppercase;
-        font-weight: 500;
-        margin: 0;
-      }
-      .progress-container{
-        display: flex;
-        align-items: center;
-        .prog-text{
-          color: var(--colour-white);
-          margin: 0;
-        }
-        .progress{
-          width: 100%;
-          height: .45rem;
-          background-color: var(--colour-third);
-          margin-left: 1rem;
-          position: relative;
-          span{
-            position: absolute;
-            left: 0;
-            top: 0;
-            height: 100%;
-            background-color: var(--colour-fifth);
-            transition: var(--transition-main);
-          }
-          .html{width: 55%;}
-          .java{width: 80%;}
-          .python{width: 85%;}
-          .javascript{width: 20%;}
-          .c{width: 65%;}
-        }
-      }
-    }
-  }
-}
-
-.stat-title{
-  text-transform: uppercase;
-  font-size: 1.4rem;
-  text-align: center;
-  padding: 3.5rem 0;
-  position: relative;
-  &::before{
-      content: '';
-      position: absolute;
-      left: 50%;
-      top: 0%;
-      width: 40%;
-      height: 1px;
-      background-color: var(--colour-fourth);
-      transform: translateX(-50%);
-  }
-}
-
 //apply the box shadow mixin to the contact section
-#contact {
-  box-shadow: 1px 1px 3px rgb(195, 207, 165);
-}
+

@@ -16,8 +16,13 @@ body {
 }
 
 header {
+  position: relative;
   background-color: var(--colour-fifth);
-  padding: 1em;
+  padding: 0.4rem;
+  margin-bottom: 0;
+}
+header h1 {
+  padding-left: 1.6rem;
 }
 
 main {
@@ -26,6 +31,11 @@ main {
   padding: 1em;
 }
 
+nav {
+  float: right;
+  margin-top: -3.2rem;
+  padding-right: 1.7rem;
+}
 nav ul {
   list-style: none;
   margin: 0;
@@ -47,6 +57,8 @@ nav ul a:hover {
 .btn {
   display: flex;
   align-self: flex-start;
+  justify-content: center;
+  padding: 1.3rem;
 }
 .btn .resume-btn {
   border-radius: 30px;
@@ -85,78 +97,98 @@ nav ul a:hover {
 .btn .resume-btn:hover::before {
   width: 100%;
   height: 100%;
-  background-color: var(--color-fifth);
+  background-color: var(--colour-white);
   transform: translateX(0);
 }
 
-.stat-title {
+.title {
   text-transform: uppercase;
   font-size: 1.4rem;
   text-align: center;
   padding: 3.5rem 0;
   position: relative;
+  margin-bottom: 0;
 }
-.stat-title::before {
+.title::before {
   content: "";
   position: absolute;
   left: 50%;
   top: 0%;
-  width: 40%;
+  width: 100%;
   height: 1px;
   background-color: var(--colour-third);
   transform: translateX(-50%);
 }
 
-.experience {
+.projects {
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
+  grid-template-columns: repeat(3, 1fr);
   grid-gap: 2rem;
-  padding-bottom: 3rem;
+  margin-top: 3rem;
 }
-.experience .experience-item {
+.projects .project-item {
   position: relative;
-  padding-left: 3rem;
-  border-left: 1px solid var(--colour-fifth);
-  margin-top: 0;
 }
-.experience .experience-item .exp-icon {
+.projects .project-item img {
+  width: 100%;
+  height: 300px;
+  -o-object-fit: cover;
+     object-fit: cover;
+  border-radius: 15px;
+}
+.projects .project-item .hover-items {
+  width: 100%;
+  height: 100%;
+  background-color: var(--colour-secondary);
   position: absolute;
-  left: -27px;
+  left: 0;
   top: 0;
-  background-color: var(--colour-third);
+  border-radius: 15px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  opacity: 0;
+  transform: scale(0);
+  transition: var(--transition-main);
+}
+.projects .project-item .hover-items h3 {
+  font-size: 1.5rem;
+  color: var(--colour-white);
+  margin-bottom: 1.5rem;
+}
+.projects .project-item .hover-items .icons {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.projects .project-item .hover-items .icons .icon {
+  background-color: var(--colour-primary);
+  border-radius: 50%;
   width: 50px;
   height: 50px;
-  border-radius: 50%;
   display: flex;
   align-items: center;
   justify-content: center;
+  margin: 0 1rem;
+  cursor: pointer;
+  transition: var(--transition-main);
 }
-.experience .experience-item .exp-icon i {
-  font-size: 1.3rem;
-}
-.experience .experience-item .exp-duration {
-  padding: 0.2rem 0.6rem;
-  background-color: var(--colour-fourth);
-  border-radius: 15px;
-  display: inline-block;
-  font-size: 0.8rem;
-  text-transform: uppercase;
-  font-weight: 500;
-}
-.experience .experience-item h5 {
-  margin: 0;
-  text-transform: uppercase;
-  font-size: 1.3rem;
-  font-weight: 600;
-  color: var(--colour-white);
-}
-.experience .experience-item h5 span {
+.projects .project-item .hover-items .icons .icon i {
+  font-size: 1.5rem;
   color: var(--colour-fifth);
-  font-weight: 500;
-  font-size: 1.2rem;
+  margin: 0 1rem;
 }
-.experience .experience-item p {
-  color: var(--colour-white);
+.projects .project-item .hover-items .icons .icon:hover {
+  background-color: var(--colour-white);
+}
+.projects .project-item .hover-items .icons .icon:hover i {
+  color: var(--colour-secondary);
+}
+
+.project-item:hover .hover-items {
+  opacity: 1;
+  transform: scale(1);
 }
 
 .about-stats {
@@ -216,24 +248,54 @@ nav ul a:hover {
   width: 65%;
 }
 
-.stat-title {
-  text-transform: uppercase;
-  font-size: 1.4rem;
-  text-align: center;
-  padding: 3.5rem 0;
+.experience {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-gap: 2rem;
+  padding-bottom: 3rem;
+}
+.experience .experience-item {
   position: relative;
+  padding-left: 3rem;
+  border-left: 1px solid var(--colour-fifth);
+  margin-top: 0;
 }
-.stat-title::before {
-  content: "";
+.experience .experience-item .exp-icon {
   position: absolute;
-  left: 50%;
-  top: 0%;
-  width: 40%;
-  height: 1px;
-  background-color: var(--colour-fourth);
-  transform: translateX(-50%);
+  left: -27px;
+  top: 0;
+  background-color: var(--colour-third);
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
-
-#contact {
-  box-shadow: 1px 1px 3px rgb(195, 207, 165);
+.experience .experience-item .exp-icon i {
+  font-size: 1.3rem;
+}
+.experience .experience-item .exp-duration {
+  padding: 0.2rem 0.6rem;
+  background-color: var(--colour-fourth);
+  border-radius: 15px;
+  display: inline-block;
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  font-weight: 500;
+}
+.experience .experience-item h5 {
+  margin: 0;
+  text-transform: uppercase;
+  font-size: 1.3rem;
+  font-weight: 600;
+  color: var(--colour-white);
+}
+.experience .experience-item h5 span {
+  color: var(--colour-fifth);
+  font-weight: 500;
+  font-size: 1.2rem;
+}
+.experience .experience-item p {
+  color: var(--colour-white);
 }/*# sourceMappingURL=styles.css.map */
