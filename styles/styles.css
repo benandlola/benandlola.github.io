@@ -150,13 +150,14 @@ nav ul a:hover {
 }
 
 .projects {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  grid-gap: 2rem;
-  margin-top: 3rem;
+  overflow: auto;
+  white-space: nowrap;
 }
 .projects .project-item {
+  display: inline-block;
   position: relative;
+  padding: 0.3rem;
+  margin-bottom: 0.4rem;
 }
 .projects .project-item img {
   width: 100%;
@@ -182,7 +183,7 @@ nav ul a:hover {
   transition: var(--transition-main);
 }
 .projects .project-item .hover-items h3 {
-  font-size: 1.5rem;
+  font-size: 1.7rem;
   color: var(--colour-white);
   margin-bottom: 1.5rem;
 }
@@ -191,27 +192,25 @@ nav ul a:hover {
   justify-content: center;
   align-items: center;
 }
-.projects .project-item .hover-items .icons .icon {
+.projects .project-item .hover-items .icons a {
   background-color: var(--colour-primary);
   border-radius: 50%;
-  width: 50px;
-  height: 50px;
+  width: 75px;
+  height: 75px;
   display: flex;
   align-items: center;
   justify-content: center;
-  margin: 0 1rem;
   cursor: pointer;
   transition: var(--transition-main);
 }
-.projects .project-item .hover-items .icons .icon i {
+.projects .project-item .hover-items .icons a i {
   font-size: 1.5rem;
   color: var(--colour-fifth);
-  margin: 0 1rem;
 }
-.projects .project-item .hover-items .icons .icon:hover {
+.projects .project-item .hover-items .icons a:hover {
   background-color: var(--colour-white);
 }
-.projects .project-item .hover-items .icons .icon:hover i {
+.projects .project-item .hover-items .icons a:hover i {
   color: var(--colour-secondary);
 }
 
@@ -331,12 +330,12 @@ nav ul a:hover {
 }
 
 .contacts {
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  display: grid;
+  grid-template-columns: 1fr 1.8fr;
+  margin-bottom: 3rem;
 }
 .contacts .left-contact {
-  flex: 1;
+  margin-top: 8rem;
 }
 .contacts .left-contact .contact-item {
   display: flex;
@@ -357,6 +356,38 @@ nav ul a:hover {
 }
 .contacts .left-contact .contact-item a:hover {
   background-color: var(--colour-third);
+}
+.contacts .right-contact {
+  margin-left: 1.5rem;
+}
+.contacts .right-contact .input {
+  margin: 1.3rem;
+}
+.contacts .right-contact .input input, .contacts .right-contact .input textarea {
+  border-radius: 30px;
+  font-weight: inherit;
+  font-size: inherit;
+  font-family: inherit;
+  padding: 0.8rem 1.1rem;
+  outline: none;
+  border: none;
+  background-color: var(--colour-third);
+  width: 100%;
+  color: var(--colour-white);
+  resize: none;
+}
+.contacts .right-contact .submit-btn {
+  display: flex;
+  justify-content: center;
+}
+.contacts .right-contact .submit-btn i {
+  padding-left: 0.7rem;
+}
+.contacts .right-contact .submit-btn button {
+  font-size: 1.3rem;
+  border-radius: 10px;
+  background: whitesmoke;
+  cursor: pointer;
 }
 
 .theme-btn {
