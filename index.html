@@ -34,13 +34,13 @@
         <h2 class="title">About Me</h2>
         <div class="about-me">
           <img src="imgs/me.jpg" alt="A picture of me">
-          <p>My name is Benedek Sandor, I'm currently a senior at George Washington University majoring in Cognitive
+          <p>My name is Benedek Sandor. I'm currently a senior at George Washington University majoring in Cognitive
           Neuroscience and minoring in Computer Science. I spent my formative years growing up in various countries around 
           Central Europe, and am fluent in both English and Hungarian. I want to work in the tech industry as a software developer.
           </p>
         </div>
         <div class="btn">
-          <a href="" class="resume-btn">
+          <a href="imgs/Resume.pdf" target="_blank" class="resume-btn" download>
             <span class="resume-text">Download Resume</span>
             <span class="resume-icon"><i class="fas fa-download"></i></span>
           </a>
@@ -54,13 +54,14 @@
             <div class="image">
               <img src="imgs/Algo.PNG" alt="5ema Trading Strategy">
             </div>
-          <div class="hover-items">
+            <div class="hover-items">
               <h3>5ema Trading Strategy</h3>
-              <div class="icons">
+              <div class="project-info">
                 <a href="https://github.com/benandlola/5EMA-Strategy" target="_blank">
                   <i class="fab fa-github"></i>
                 </a>
               </div>
+              <p>A Python script that connects to Alpaca API in order<br> to collect market data, which is organized with pandas dataframes. <br>The information is parsed to incorporate a trading strategy and API calls are sent to execute trades.</p>
             </div>
           </div>
           <div class="project-item">
@@ -69,11 +70,12 @@
             </div>
             <div class="hover-items">
               <h3>Slack Simulator</h3>
-              <div class="icons">
+              <div class="project-info">
                 <a href="https://github.com/benandlola/Slack-Simulator" target="_blank">
                   <i class="fab fa-github"></i>
                 </a>
               </div>
+              <p>Using Java a chatroom akin to Slack is simulated with classes incorporating <br> Threading for a client and server side application.<br> The GUI is made using JFrame.</p>
             </div>
           </div>
           <div class="project-item">
@@ -82,11 +84,12 @@
             </div>
             <div class="hover-items">
               <h3>Cat & Mouse Game</h3>
-              <div class="icons">
+              <div class="project-info">
                 <a href="https://github.com/benandlola/Cat-Mouse-Game" target="_blank">
                   <i class="fab fa-github"></i>
                 </a>
               </div>
+              <p>This project uses Java and concepts of OOP, like <br> inheritance to make a cat and mouse game, plotted on a grid.</p>
             </div>
           </div>
           <div class="project-item">
@@ -95,11 +98,12 @@
             </div>
             <div class="hover-items">
               <h3>Boggle Solver</h3>
-              <div class="icons">
+              <div class="project-info">
                 <a href="https://github.com/benandlola/Boggle-Solver" target="_blank">
                   <i class="fab fa-github"></i>
                 </a>
               </div>
+              <p>Using C, this project utilizes a hashmap <br>and linked list structure to perform a <br> depth first search on a randomized <br>boggle board to find as many words as <br>possible from a given dictionary text file and seed.</p>
             </div>
           </div>
         </div>
@@ -108,6 +112,7 @@
       <section id="skills">
         <div class="about-stats">
           <h4 class="title">My Skills</h4>
+          <h3>Confidence/Proficiency Level</h3>
           <div class="progress-bars">
             <div class="progress-bar">
               <p class="prog-title">html/css</p>
@@ -169,7 +174,7 @@
             <h5>Bachelor of Science Degree - <span> George Washington University</span></h5>
             <p>
               Majoring in Cognitive Neuroscience and minoring in Computer Science. 
-              4.0 GPA and on the Dean's List.
+              4.0 GPA and on the Dean's List. Prospective summa cum laude graduate.
             </p>
           </div>
           <div class="experience-item">
@@ -179,7 +184,7 @@
               <p class="exp-duration">2022 - 2023</p>
               <h5>Teaching Assistant -<span> George Washington University</span></h5>
               <p>
-                I was an assistant for introduction to Python as well as introduction to Software Development, leading labs and holding office hours.
+                I was an assistant for Introduction to Python as well as Introduction to Software Development, leading labs and holding office hours. Labs held around 30 students where I answered questions pertaining to their assignments, guiding them through the logic.
               </p>
             </div>
           <div class="experience-item">
@@ -189,7 +194,7 @@
               <p class="exp-duration">2021 - 2022</p>
               <h5>Website Manager -<span> GWU Hillel</span></h5>
               <p>
-                I was in charge of keeping the website up to date and submitting changes to the manager to incorporate them.
+                I was in charge of keeping the website up to date and submitting changes to the manager. Responsibilities included organizing the website layout using Wix and adding necessary information for the available programs.
               </p>
             </div>
           </div>
@@ -221,18 +226,18 @@
             </div>
           </div>
           <div class="right-contact">
-            <form action="https://formsubmit.co/benedekgordonsandor@gmail.com" method="POST">
+            <form action="https://formspree.io/f/meqwjnnk" method="POST">
               <div class="input">
-                <input type="text" required placeholder="YOUR NAME">
+                <input type="text" name="name" required placeholder="YOUR NAME">
               </div>
               <div class="input">
-                <input type="email" required placeholder="YOUR EMAIL">
+                <input type="email" name="_replyto" required placeholder="YOUR EMAIL">
               </div>
               <div class="input">
-                <input type="text" required placeholder="ENTER SUBJECT">
+                <input type="text" name="_subject" required placeholder="ENTER SUBJECT">
               </div>
               <div class="input">
-                <textarea rows="8" placeholder="WRITE YOUR MESSAGE HERE..."></textarea>
+                <textarea rows="8" name="message" placeholder="WRITE YOUR MESSAGE HERE..."></textarea>
               </div>
               <div class="submit-btn">
                 <button type="submit"> Send

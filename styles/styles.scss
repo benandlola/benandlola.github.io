@@ -11,12 +11,12 @@
 
 // for theme
 .switch-theme{
-  --colour-primary: #8cb6db;
-  --colour-secondary: darkorchid;
-  --colour-third: lightblue;
-  --colour-fourth: #27c4a2;
-  --colour-fifth: palevioletred;  
-  --colour-white: midnightblue;
+  --colour-primary: whitesmoke;
+  --colour-secondary: midnightblue;
+  --colour-third: lightslategrey; 
+  --colour-fourth: lightblue; 
+  --colour-fifth: salmon;  
+  --colour-white: lightseagreen;
 }
 
 // style the body element
@@ -191,7 +191,11 @@ nav{
         color: var(--colour-white);
         margin-bottom: 1.5rem;
       }
-      .icons{
+      p{
+        display: inline-block;
+        color: var(--colour-white);
+      }
+      .project-info{
         display: flex;
         justify-content: center;
         align-items: center;
@@ -229,6 +233,18 @@ nav{
 // Skills section
 .about-stats{
   padding-bottom: 4rem;
+  .title{
+    margin-bottom: 0;
+    padding-bottom: 0;
+  }
+  h3{
+    color: var(--colour-white);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding-bottom: 2rem;
+    font-weight: 400;
+  }
   .progress-bars{
     display: grid;
     grid-template-columns: repeat(2, 1fr);
@@ -381,6 +397,7 @@ nav{
         padding-left: 0.7rem;
       }
       button{ 
+        font-family: inherit;
         font-size: 1.3rem;
         border-radius: 10px;
         background: whitesmoke;
@@ -431,3 +448,5 @@ nav{
     background: var(--colour-white);
   }
 }
+
+//TODO Media Queries

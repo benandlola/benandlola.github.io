@@ -9,12 +9,12 @@
 }
 
 .switch-theme {
-  --colour-primary: #8cb6db;
-  --colour-secondary: darkorchid;
-  --colour-third: lightblue;
-  --colour-fourth: #27c4a2;
-  --colour-fifth: palevioletred;
-  --colour-white: midnightblue;
+  --colour-primary: whitesmoke;
+  --colour-secondary: midnightblue;
+  --colour-third: lightslategrey;
+  --colour-fourth: lightblue;
+  --colour-fifth: salmon;
+  --colour-white: lightseagreen;
 }
 
 body {
@@ -187,12 +187,16 @@ nav ul a:hover {
   color: var(--colour-white);
   margin-bottom: 1.5rem;
 }
-.projects .project-item .hover-items .icons {
+.projects .project-item .hover-items p {
+  display: inline-block;
+  color: var(--colour-white);
+}
+.projects .project-item .hover-items .project-info {
   display: flex;
   justify-content: center;
   align-items: center;
 }
-.projects .project-item .hover-items .icons a {
+.projects .project-item .hover-items .project-info a {
   background-color: var(--colour-primary);
   border-radius: 50%;
   width: 75px;
@@ -203,14 +207,14 @@ nav ul a:hover {
   cursor: pointer;
   transition: var(--transition-main);
 }
-.projects .project-item .hover-items .icons a i {
+.projects .project-item .hover-items .project-info a i {
   font-size: 1.5rem;
   color: var(--colour-fifth);
 }
-.projects .project-item .hover-items .icons a:hover {
+.projects .project-item .hover-items .project-info a:hover {
   background-color: var(--colour-white);
 }
-.projects .project-item .hover-items .icons a:hover i {
+.projects .project-item .hover-items .project-info a:hover i {
   color: var(--colour-secondary);
 }
 
@@ -221,6 +225,18 @@ nav ul a:hover {
 
 .about-stats {
   padding-bottom: 4rem;
+}
+.about-stats .title {
+  margin-bottom: 0;
+  padding-bottom: 0;
+}
+.about-stats h3 {
+  color: var(--colour-white);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding-bottom: 2rem;
+  font-weight: 400;
 }
 .about-stats .progress-bars {
   display: grid;
@@ -384,6 +400,7 @@ nav ul a:hover {
   padding-left: 0.7rem;
 }
 .contacts .right-contact .submit-btn button {
+  font-family: inherit;
   font-size: 1.3rem;
   border-radius: 10px;
   background: whitesmoke;
