@@ -279,10 +279,10 @@ nav{
             background-color: var(--colour-fifth);
             transition: var(--transition-main);
           }
-          .html{width: 55%;}
+          .html{width: 35%;}
           .java{width: 80%;}
           .python{width: 85%;}
-          .javascript{width: 20%;}
+          .javascript{width: 10%;}
           .c{width: 65%;}
         }
       }
@@ -449,4 +449,52 @@ nav{
   }
 }
 
-//TODO Media Queries
+//Media Queries
+@media only screen and (max-width: 740px){
+  header nav{
+    visibility: hidden;
+  }
+}
+
+@media only screen and (max-width: 480px){
+  .about-me{
+    display: grid;
+    img{
+      padding: 0 4rem 0 4rem;
+      margin: 0 4rem 0 4rem;
+    }
+    p{
+      padding: 0 4rem 0 4rem;
+      margin: 1rem 4rem 1rem 4rem;
+    }
+  }
+  .projects .project-item .hover-items p{
+    visibility: visible;
+    max-width: 0.5rem;
+    position: relative;
+    right: 9rem;
+    display: inline;
+    font-size: 12px;
+  }
+  .experience{
+    grid-template-columns: none
+  }
+  .contacts{
+    grid-template-columns: none;
+    .left-contact{
+      margin-top: 0;
+    }
+    .right-contact{
+      margin-left: 0;
+      padding: 1rem;
+      .input{
+        margin-left: 0;
+      }
+    }
+  }
+  .theme-btn{
+    bottom: 2%;
+    left: 80%;
+
+  }
+}
