@@ -494,4 +494,7 @@ nav ul a:hover {
     bottom: 2%;
     left: 80%;
   }
+  body {
+    width: 112%;
+  }
 }/*# sourceMappingURL=styles.css.map */
