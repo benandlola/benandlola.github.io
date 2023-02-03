@@ -285,6 +285,9 @@ nav ul a:hover {
 .about-stats .progress-bars .progress-bar .progress-container .progress .python {
   width: 85%;
 }
+.about-stats .progress-bars .progress-bar .progress-container .progress .sql {
+  width: 80%;
+}
 .about-stats .progress-bars .progress-bar .progress-container .progress .javascript {
   width: 10%;
 }
