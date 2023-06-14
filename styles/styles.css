@@ -277,22 +277,22 @@ nav ul a:hover {
   transition: var(--transition-main);
 }
 .about-stats .progress-bars .progress-bar .progress-container .progress .html {
-  width: 35%;
+  width: 70%;
 }
 .about-stats .progress-bars .progress-bar .progress-container .progress .java {
   width: 80%;
 }
-.about-stats .progress-bars .progress-bar .progress-container .progress .python {
-  width: 85%;
-}
 .about-stats .progress-bars .progress-bar .progress-container .progress .sql {
   width: 80%;
 }
+.about-stats .progress-bars .progress-bar .progress-container .progress .python {
+  width: 90%;
+}
 .about-stats .progress-bars .progress-bar .progress-container .progress .javascript {
-  width: 10%;
+  width: 60%;
 }
 .about-stats .progress-bars .progress-bar .progress-container .progress .c {
-  width: 65%;
+  width: 50%;
 }
 
 .experience {
